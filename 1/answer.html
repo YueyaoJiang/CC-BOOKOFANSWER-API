@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Book Of Answer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+  <header>
+    <h1>Your Answer</h1>
+    <hr class="decorative">
+  </header>
+
+  <main class="container">
+    <p id="answer">Loading…</p>
+  </main>
+
+  <script>
+    window.switchLang = function(lang) {
+      displayAnswer(lang);
+    };
+
+    function displayAnswer(lang) {
+      const stored = JSON.parse(localStorage.getItem('divinationAnswerObj'));
+      const el = document.getElementById('answer');
+      if (stored && stored[lang]) {
+        el.textContent = stored[lang];
+      } else {
+        el.textContent = 'No answer found.';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const defaultLang = localStorage.getItem('divinationAnswerLang') || 'en';
+      displayAnswer(defaultLang);
+      localStorage.removeItem('divinationAnswerObj');
+      localStorage.removeItem('divinationAnswerLang');
+    });
+  </script>
+</body>
+</html>
