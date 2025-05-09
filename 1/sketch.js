@@ -5,7 +5,7 @@ window.switchLang = function(lang) {
 };
 
 window.addEventListener('DOMContentLoaded', () => {
-  // 加载本地 JSON
+
   fetch('answer.json')
     .then(res => res.json())
     .then(data => { answersJSON = data; });
