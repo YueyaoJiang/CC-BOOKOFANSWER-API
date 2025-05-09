@@ -1,7 +1,7 @@
-/* —— 导入复古中文字体 —— 必须放在最顶端 —— */
+
 @import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
 
-/* —— 导入自定义复古英文字体 —— */
+
 @font-face {
   font-family: 'myfont';
   src: url('myfont.otf') format('opentype');
@@ -9,14 +9,13 @@
   font-style: normal;
 }
 
-/* —— 重置 & 全局 —— */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* —— 全局背景 & 字体栈 —— */
 html, body {
   width: 100%;
   height: 100%;
@@ -25,7 +24,6 @@ html, body {
     url('newspaper background.png') no-repeat center center fixed;
   background-size: cover;
 
-  /* 英文用 myfont，中文优先 ZCOOL QingKe HuangYou */
   font-family: 'myfont', 'ZCOOL QingKe HuangYou', serif;
 
   color: #4a3720;
@@ -35,10 +33,7 @@ html, body {
   text-align: center;
 }
 
-/* 以下样式保持不变…… */
 
-
-/* —— 页眉风格 —— */
 header {
   margin-top: 2rem;
 }
@@ -59,7 +54,7 @@ header .subtitle {
   margin-bottom: 0.5rem;
 }
 
-/* —— 装饰线 —— */
+
 hr.decorative {
   width: 60%;
   border: none;
@@ -78,7 +73,7 @@ hr.decorative::after {
 hr.decorative::before { left: 0; border-bottom: none; border-right: none; }
 hr.decorative::after  { right: 0; border-bottom: none; border-left: none; }
 
-/* —— 主体容器 —— */
+
 .container {
   width: 60%;
   max-width: 500px;
@@ -88,7 +83,7 @@ hr.decorative::after  { right: 0; border-bottom: none; border-left: none; }
   position: relative;
 }
 
-/* —— 输入框 —— */
+
 .question-input {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -104,7 +99,7 @@ hr.decorative::after  { right: 0; border-bottom: none; border-left: none; }
   box-shadow: 0 0 8px rgba(130,102,75,0.5);
 }
 
-/* —— 按钮 —— */
+
 .ask-button {
   font-size: 1.25rem;
   padding: 0.75rem 1.5rem;
@@ -119,19 +114,16 @@ hr.decorative::after  { right: 0; border-bottom: none; border-left: none; }
   transform: translateY(-2px);
 }
 
-/* —— 答案字体 —— */
+
 #answer {
   font-size: 8rem;
   line-height: 1.4;
   margin: 0 auto;
 }
 
-/* —— 首字母琥珀色 —— */
 *::first-letter {
   color: #BC870F;
 }
-
-/* —— 响应式 —— */
 @media (max-width: 768px) {
   header h1 { font-size: 3.5rem; }
   .container { width: 85%; }
